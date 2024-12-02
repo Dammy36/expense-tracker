@@ -15,10 +15,18 @@ function Tables({ expenses, onDelete }) {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Date</TableCell>
-              <TableCell>Expenses</TableCell>
-              <TableCell>Amount</TableCell>
-              <TableCell>Action</TableCell>
+              <TableCell>
+                <span className="content">Date</span>
+              </TableCell>
+              <TableCell>
+                <span className="content">Expenses</span>
+              </TableCell>
+              <TableCell>
+                <span className="content">Amount</span>
+              </TableCell>
+              <TableCell>
+                <span className="content">Action</span>
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -27,7 +35,7 @@ function Tables({ expenses, onDelete }) {
                 <TableRow key={expense.id}>
                   <TableCell>{expense.date}</TableCell>
                   <TableCell>{expense.name}</TableCell>
-                  <TableCell>{expense.amount.toFixed(2)}</TableCell>
+                  <TableCell>${expense.amount.toFixed(2)}</TableCell>
                   <Button
                     variant="contained"
                     color="primary"
@@ -39,7 +47,7 @@ function Tables({ expenses, onDelete }) {
                     variant="contained"
                     color="secondary"
                     onClick={() => onDelete(expense.id)}
-                    style={{ marginLeft: "10px" }}
+                    style={{ margin: "10px" }}
                   >
                     Delete
                   </Button>

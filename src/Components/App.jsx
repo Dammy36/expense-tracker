@@ -21,6 +21,7 @@ function App() {
 
   return (
     <div>
+      <h1>Daliy Expenses</h1>
       <Tables expenses={expenses} onDelete={onDelete} />
       <Add setExpenses={setExpenses} />
     </div>

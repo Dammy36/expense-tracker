@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { TextField, Button, Stack } from "@mui/material";
+
 const Add = ({ setExpenses }) => {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
@@ -24,26 +26,37 @@ const Add = ({ setExpenses }) => {
   };
 
   return (
-    <div>
-      <input
+    <div className="input-table">
+      <TextField
         onChange={(e) => setName(e.target.value)}
         name="name"
         type="text"
         value={name}
+        variant="outlined"
       />
 
-      <input
+      <TextField
         onChange={(e) => setDate(e.target.value)}
         type="date"
         value={date}
+        variant="outlined"
       />
 
-      <input
+      <TextField
         onChange={(e) => setAmount(e.target.value)}
         type="number"
         value={amount}
+        variant="outlined"
       />
-      <button onClick={handleAdd}>Add</button>
+
+      <Button
+        variant="contained"
+        color="success"
+        sx={{ m: 1 }}
+        onClick={handleAdd}
+      >
+        Add
+      </Button>
     </div>
   );
 };
